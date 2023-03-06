@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 1rem;
-    background: #F2F5F6 !important;
+    background: rgb(201, 201, 201) !important;
   }
   
   .masonry-with-columns {
@@ -161,5 +161,12 @@ body {
     height: 16px;
     margin: 0px 4px 0px 4px ;
 }
+.footer{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  
+
+
+
