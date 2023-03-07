@@ -23,7 +23,7 @@ body {
   }
   .masonry-with-columns div {
     border-radius: 16px;
-    color: black;
+    color: #05002C;
     display: inline-block;
     width: 100%;
     font-family: system-ui;
@@ -171,9 +171,7 @@ body {
 }
 
 .footer{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .card-icon{
@@ -181,8 +179,27 @@ body {
   width: 24px;
 }
 
+.centered{
+  display: flex;
+  justify-content: center;
 
+}
 
+.footer-links{
+  text-decoration: none;
+  color: #07516e;
+}
+
+.bigailist{
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.bigailist img{
+  margin-right: 8px;
+  
+}
 
 @media screen and (max-width: 500px) {
     
