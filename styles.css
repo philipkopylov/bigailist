@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #1B3822 !important;
+    background-position: center;
   }
   
   .masonry-with-columns {
@@ -20,8 +21,25 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 1rem;
+    max-height: 2200px;
   }
-  .masonry-with-columns div {
+
+  @media screen and (max-width: 820px) {
+    .masonry-with-columns{
+      max-height: 4000px;
+    }
+    
+  }
+
+  @media screen and (max-width: 600px) {
+    .masonry-with-columns{
+      columns: 1 250px;
+      max-height: 8000px;
+    }
+    
+  }
+
+  .single-block {
     border-radius: 16px;
     color: #05002C;
     display: inline-block;
@@ -37,8 +55,7 @@ body {
   }
 
   
- 
-  .masonry-with-columns div:hover{
+  .single-block:hover{
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: scale(1.012);
@@ -50,7 +67,7 @@ body {
     transition-timing-function: ease-out;
   }
   
-  .masonry-with-columns div h2 {
+  .single-block h2 {
     font-size: 1rem;
     text-align: left;
     font-weight: 700;
@@ -58,7 +75,7 @@ body {
     color:#05002C;
     margin-left: 10px;
   }
-  .masonry-with-columns div a {
+  .non-affiliate-link {
     text-align: left;
     display: block;
     width: 100%;
@@ -67,53 +84,139 @@ body {
     line-height: 1.5rem;
     font-family: 'Golos Text', sans-serif;
   }
-  .masonry-with-columns div a:hover {
-    color: #4868FF;
+
+  .link {
+    text-align: left;
+    display: block;
+    width: 100%;
+    color: #05002C;
+    font-weight: 200;
+    line-height: 1.5rem;
+    font-family: 'Golos Text', sans-serif;
+    margin-bottom: 1rem;
   }
+
+  .link .info{
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: #000000b0;
+    margin-left: 1.9rem;
+    margin-bottom: 0.3rem;
+
+    
+  }
+
+.info a{
+  text-decoration: none;
+}
   
 /* Style the header with a grey background and some padding */
 .header {
-    overflow: hidden;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .header {
+    display: flex;
+    flex-direction: column;
   }
+
+  .header .header-right{
+    margin-top: 1rem;
+  }
+  }
+
+
+@media screen and (max-width: 500px) {
   
-  /* Style the header links */
-  .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
+
+  .header h1.logo {
+    font-size: 3rem;
   }
+
+  .title{
+  }
+
+  body{
+    background-position-x: center;
+  }
+   
+}
+
+.logo {
+  margin: 0;
+  font-size: 50px;
+}
+
+.title {
+  font-size: 18px;
+  color: #000000;
+  margin-top: 5px;
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-left {
+  visibility: hidden;
+}
+
+.button {
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.button a{
+  text-decoration: none;
+  color: black;
+}
+
+.button:hover{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.012);
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
   
   /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-  .header h1.logo {
+  .header h1.logo a {
     font-weight: bold;
     font-family: "Base";
     margin: 0 auto;
     color: #05002C;
     text-align: center;
     font-size: 3.5rem;
+    text-decoration: none;
     
   }
 
-  .title{
-    text-align: center;
-    color: #05002C;
-    margin-top: 0.5rem;
-    font-family: 'Golos Text', sans-serif;
-  
-  }
-  
-  /* Change the background color on mouse-over */
-  .header a:hover {
-    
-  }
   
   /* Style the active/current link*/
   .header a.active {
@@ -132,17 +235,21 @@ body {
     height: 16px; /* Set the height of the image */
 }
 
-.links{
+
+
+
+
+
+.non-affiliate-links{
   counter-reset: link-counter;
-    
-
+  background: none;
 }
 
-.links a{
+.non-affiliate-links a{
     text-decoration: none;
-    
 }
-.links a:before {
+
+.non-affiliate-links .non-affiliate-link:before {
     counter-increment: link-counter; /* Increment the counter */
     content: counter(link-counter); /* Add the counter number and a period */
     color: rgb(155, 155, 155);
@@ -154,6 +261,44 @@ body {
     margin-right: 8px;
     
 }
+
+.non-affiliate-links .non-affiliate-link:hover {
+  color: #4868FF;
+}
+
+.links .link a:hover {
+  color: #4868FF;
+}
+
+
+
+
+
+.links{
+  counter-reset: link-counter;
+  background: none;
+}
+
+.links .link:before {
+  counter-increment: link-counter; /* Increment the counter */
+  content: counter(link-counter); /* Add the counter number and a period */
+  color: rgb(155, 155, 155);
+  font-size: 12px;
+  display: inline-block;
+  left: 0;
+  width: 20px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.link a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
 .image-favicon{
     width: 16px;
     height: 16px;
@@ -201,19 +346,6 @@ body {
   
 }
 
-@media screen and (max-width: 500px) {
-    
-  .header h1.logo {
-    font-size: 3rem;
-  }
 
-  .title{
-  }
-
-  body{
-    background-position-x: center;
-  }
-   
-}
 
 
